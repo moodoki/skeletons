@@ -1,0 +1,17 @@
+##
+
+CC=g++
+CFLAGS=-wall
+
+EXEC=run
+SOURCES=$(wildcard *.cpp)
+OBJS=$(SOURCES:.cpp=.o)
+
+$(EXEC):$(OBJS)
+	$(CC) $(OBJS) -o $(EXEC)
+
+%.o:%.cpp
+	$(CC) -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f $(EXEC) $(OBJS)
