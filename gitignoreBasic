@@ -1,4 +1,4 @@
 *.swp
-graph.o
+*.o
 a.out
 run
