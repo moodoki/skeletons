@@ -3,10 +3,13 @@ SRCDIR=src
 QUOTEDIR=include
 PKGS=
 BUILDDIR=build
+LIBNAME=
 
 CFLAGS=-g -Wall -iquote$(QUOTEDIR) `pkg-config --cflags $(PKGS)`
-LDFLAGS=`pkg-config --libs $(PKGS)`
-TARGET=
+LIBS=`pkg-config --libs $(PKGS)`
+TARGET=lib$(LIBNAME).so
+LDFLAGS= -shared -Wl,-soname=$(TARGET)
+
 
 SRCEXT=cpp
 SOURCES=$(wildcard $(SRCDIR)/*.$(SRCEXT))
