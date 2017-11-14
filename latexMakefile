@@ -33,7 +33,7 @@ clean:
 
 cont:
 	$(LATEXMK) $(LATEXMKOPT) $(CONTINUOUS) \
-		-pdflatex="$(LATEX) $(LATEXOPT) %O %S" $(MAIN)
+		-pdflatex="$(LATEX) $(LATEXOPT) $(NONSTOP) %O %S" $(MAIN)
 
 debug:
 	$(LATEX) $(LATEXOPT) $(MAIN)
