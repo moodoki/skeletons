@@ -17,7 +17,7 @@ all:    $(MAIN).pdf
 
 $(MAIN).pdf: $(MAIN).tex .refresh $(SOURCES) $(FIGURES)
 	$(LATEXMK) $(LATEXMKOPT) \
-    	-pdflatex="$(LATEX) $(LATEXOPT) $(NONSTOP) %O %S" $(MAIN)
+    	-pdflatex="$(LATEX) $(LATEXOPT) %O %S" $(MAIN)
 
 force:
 	touch .refresh
